@@ -1,0 +1,6 @@
+{
+  "name": "AdShield Mobile & Backend Architecture Lab",
+  "description": "Comprehensive engineering blueprint, live player simulator, and backend rule engine demonstrating how Brave Browser and mobile accessibility/VPN engines skip and bypass unskippable video ads.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

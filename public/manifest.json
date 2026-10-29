@@ -1,0 +1,32 @@
+{
+  "id": "/",
+  "name": "AdShield Architecture Lab",
+  "short_name": "AdShield",
+  "description": "Mobile Ad-Skipping Architecture Lab, Brave Shield Fast-Forward & SSAI Manifest Sanitizer",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#020617",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
