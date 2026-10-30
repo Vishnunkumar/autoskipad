@@ -35,7 +35,14 @@ jobs:
             unzip -q -o ./public/AdShield-Android-Project.zip -d android-build
           fi
           cd android-build
-          # Configure gradle wrapper with Gradle 8.7 (satisfies AGP >= 8.6 requirement)
+          # Ensure AndroidX is enabled in gradle.properties
+          cat << 'EOF' > gradle.properties
+          android.useAndroidX=true
+          android.nonTransitiveRClass=true
+          org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
+          EOF
+
+          # Ensure gradle wrapper is configured with Gradle 8.7
           mkdir -p gradle/wrapper
           cat << 'EOF' > gradle/wrapper/gradle-wrapper.properties
           distributionBase=GRADLE_USER_HOME
