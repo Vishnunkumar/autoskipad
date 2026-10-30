@@ -32,10 +32,21 @@ jobs:
         run: |
           mkdir -p android-build
           if [ -f "./public/AdShield-Android-Project.zip" ]; then
-            unzip -q ./public/AdShield-Android-Project.zip -d android-build
+            unzip -q -o ./public/AdShield-Android-Project.zip -d android-build
           fi
           cd android-build
-          gradle wrapper --gradle-version 8.4 || true
+          # Configure gradle wrapper with Gradle 8.7 (satisfies AGP >= 8.6 requirement)
+          mkdir -p gradle/wrapper
+          cat << 'EOF' > gradle/wrapper/gradle-wrapper.properties
+          distributionBase=GRADLE_USER_HOME
+          distributionPath=wrapper/dists
+          distributionUrl=https\://services.gradle.org/distributions/gradle-8.7-bin.zip
+          networkTimeout=10000
+          validateDistributionUrl=true
+          zipStoreBase=GRADLE_USER_HOME
+          zipStorePath=wrapper/dists
+          EOF
+          gradle wrapper --gradle-version 8.7 || true
           chmod +x gradlew || true
 
       - name: Compile Native Android APK with Gradle
